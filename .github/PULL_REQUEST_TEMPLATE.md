@@ -4,7 +4,8 @@
 
 ## Checklist
 
-### For new tool submissions:
+### For new tool submissions
+
 - [ ] Tool is open-source or free-to-use with documented terms
 - [ ] Repository has a commit in the last 18 months (or is historically significant)
 - [ ] Relevant to professional hardware design engineers
@@ -14,11 +15,13 @@
 - [ ] Added to the correct workflow stage section
 - [ ] PR title follows: `Add [Tool Name] to [Stage]`
 
-### For fixes / updates:
+### For fixes and updates
+
 - [ ] Described what changed and why in this PR description
 - [ ] Verified the new link/info is correct
 
-### For documentation:
+### For documentation
+
 - [ ] Added or updated a file under `docs/`
 - [ ] Linked from the relevant README section (if applicable)
 

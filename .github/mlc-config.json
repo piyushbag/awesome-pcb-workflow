@@ -1,32 +1,45 @@
 {
   "ignorePatterns": [
-    {
-      "pattern": "^https://star-history.com"
-    },
-    {
-      "pattern": "^https://api.star-history.com"
-    },
-    {
-      "pattern": "^https://raw.githubusercontent.com/andreasbm"
-    },
-    {
-      "pattern": "^http://www.hottconsultants.com"
-    },
-    {
-      "pattern": "^http://atlc.sourceforge.net"
-    },
-    {
-      "pattern": "^http://gerbv.geda-project.org"
-    },
-    {
-      "pattern": "^http://qucs.sourceforge.net"
-    },
-    {
-      "pattern": "^http://urjtag.org"
-    },
-    {
-      "pattern": "^http://ngspice.sourceforge.net"
-    }
+    { "pattern": "^https://star-history.com" },
+    { "pattern": "^https://api.star-history.com" },
+    { "pattern": "^https://raw.githubusercontent.com/andreasbm" },
+
+    { "pattern": "^http://www.hottconsultants.com" },
+    { "pattern": "^http://atlc.sourceforge.net" },
+    { "pattern": "^http://gerbv.geda-project.org" },
+    { "pattern": "^http://qucs.sourceforge.net" },
+    { "pattern": "^http://urjtag.org" },
+    { "pattern": "^http://ngspice.sourceforge.net" },
+    { "pattern": "^http://www.geda-project.org" },
+    { "pattern": "^http://www.eremex.com" },
+    { "pattern": "^http://urjtag.org" },
+    { "pattern": "^https://sourceforge.net" },
+
+    { "pattern": "^https://saturnpcb.com" },
+    { "pattern": "^https://componentsearchengine.com" },
+    { "pattern": "^https://www.snapeda.com" },
+    { "pattern": "^https://www.ultralibrarian.com" },
+    { "pattern": "^https://www.numericalinnovations.com" },
+    { "pattern": "^https://www.sonnetsoftware.com" },
+    { "pattern": "^https://www.broadcom.com" },
+    { "pattern": "^https://www.betheresignal.com" },
+    { "pattern": "^https://www.withdiode.com" },
+    { "pattern": "^https://pcbshopper.com" },
+    { "pattern": "^https://dfm.nexpcb.com" },
+    { "pattern": "^https://www.orcad.com" },
+    { "pattern": "^https://tracespace.io" },
+    { "pattern": "^https://xyce.sandia.gov" },
+    { "pattern": "^https://certification.oshwa.org" },
+    { "pattern": "^https://klc.kicad.org" },
+    { "pattern": "^https://www.ipc.org" },
+    { "pattern": "^https://aisler.net" },
+    { "pattern": "^https://contextualelectronics.com" },
+    { "pattern": "^https://www.jitx.com" },
+    { "pattern": "^https://www.eevblog.com" },
+    { "pattern": "^https://www.altium.com" },
+    { "pattern": "^https://www.analog.com" },
+    { "pattern": "^https://openems.de" },
+    { "pattern": "^https://www.elsevier.com" }
   ],
   "aliveStatusCodes": [200, 206],
   "timeout": "20s",

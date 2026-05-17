@@ -15,6 +15,7 @@ assignees: ""
 <!-- Paste the current table row -->
 
 **Issue:**
+
 - [ ] Broken / dead link
 - [ ] Tool is unmaintained / archived
 - [ ] Incorrect license listed

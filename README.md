@@ -6,8 +6,8 @@
 
 <h1>🔌 Awesome PCB Workflow</h1>
 
-<p><em>The complete open-source toolkit for professional PCB design engineers.</em><br>
-<strong>Requirements → Schematic → Simulation → Layout → Fabrication → Test → Done.</strong></p>
+<p><em>Open-source tools for the complete PCB design workflow.</em><br>
+<strong>AI-assisted EDA · Schematic Capture · SPICE Simulation · Signal Integrity · Layout Automation · DFM · Fabrication CI/CD · Hardware Testing Agents</strong></p>
 
 [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
 [![GitHub Stars](https://img.shields.io/github/stars/piyushbag/awesome-pcb-workflow?style=flat-square&color=gold&logo=github)](https://github.com/piyushbag/awesome-pcb-workflow/stargazers)

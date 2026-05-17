@@ -1,0 +1,42 @@
+# Python toolchain helpers for the awesome-pcb-workflow
+# Install with: pip install -r requirements.txt
+
+# KiBot — CI/CD pipeline for PCB: Gerbers, BOM, drill, docs on every commit
+# https://github.com/INTI-CMNB/KiBot
+kibot>=2.3.0
+
+# KiBOM — configurable BOM export from KiCad schematics
+# https://github.com/SchrodingersGat/KiBOM
+kibom>=1.8.0
+
+# KiCost — real-time BOM costing from Mouser, Digi-Key, LCSC, Arrow
+# https://github.com/hildogjr/KiCost
+kicost>=1.1.19
+
+# SKiDL — describe schematics in Python, generate netlists programmatically
+# https://github.com/devbisme/skidl
+skidl>=2.0.0
+
+# PyMeasure — Python instrument control for automated bench testing
+# https://github.com/pymeasure/pymeasure
+pymeasure>=0.13.0
+
+# PySpice — Python API to ngspice for scriptable SPICE simulation
+# https://github.com/FabriceSalvaire/PySpice
+PySpice>=1.5
+
+# scikit-rf — Python RF/microwave analysis (S-params, network analysis)
+# https://github.com/scikit-rf/scikit-rf
+scikit-rf>=0.30.0
+
+# pcb-tools — Python Gerber/Excellon file parsing and rendering
+# https://github.com/curtacircuitos/pcb-tools
+pcb-tools>=0.1.5
+
+# pygerber — modern Gerber renderer and DFM checker
+# https://github.com/Argmaster/pygerber
+pygerber>=2.4.0
+
+# SchemDraw — draw and annotate circuit schematics in Python
+# https://schemdraw.readthedocs.io
+schemdraw>=0.19

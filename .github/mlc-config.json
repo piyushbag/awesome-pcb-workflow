@@ -1,0 +1,36 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://star-history.com"
+    },
+    {
+      "pattern": "^https://api.star-history.com"
+    },
+    {
+      "pattern": "^https://raw.githubusercontent.com/andreasbm"
+    },
+    {
+      "pattern": "^http://www.hottconsultants.com"
+    },
+    {
+      "pattern": "^http://atlc.sourceforge.net"
+    },
+    {
+      "pattern": "^http://gerbv.geda-project.org"
+    },
+    {
+      "pattern": "^http://qucs.sourceforge.net"
+    },
+    {
+      "pattern": "^http://urjtag.org"
+    },
+    {
+      "pattern": "^http://ngspice.sourceforge.net"
+    }
+  ],
+  "aliveStatusCodes": [200, 206],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "30s"
+}

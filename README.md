@@ -91,28 +91,28 @@ pip install -r requirements.txt    # kibot, kibom, kicost, skidl, pymeasure
 │  📋 Requirements & Specification                                │
 │       │                                                         │
 │       ▼                                                         │
-│  📐 Schematic Capture ──── 📦 Component Library                │
+│  📐 Schematic Capture ──── 📦 Component Library                 │
 │       │                         │                               │
 │       ▼                         ▼                               │
-│  ⚡ SPICE Simulation       💰 BOM Management                    │
+│  ⚡ SPICE Simulation       💰 BOM Management                     │
 │       │                                                         │
 │       ▼                                                         │
-│  📡 Signal Integrity & EMC Analysis                            │
+│  📡 Signal Integrity & EMC Analysis                             │
 │       │                                                         │
 │       ▼                                                         │
-│  🖥️  PCB Layout / EDA ──── 🧊 3D Visualization                 │
+│  🖥️  PCB Layout / EDA ──── 🧊 3D Visualization                  │
 │       │                                                         │
 │       ▼                                                         │
-│  ✅  Design Rule Check (DRC) & DFM Analysis                    │
+│  ✅  Design Rule Check (DRC) & DFM Analysis                     │
 │       │                                                         │
 │       ▼                                                         │
-│  🏭  Fabrication Prep ──── 🔩 Panelization ──── 👁️ Gerber QA   │
+│  🏭  Fabrication Prep ──── 🔩 Panelization ──── 👁️ Gerber QA    │
 │       │                                                         │
 │       ▼                                                         │
-│  🧪  Test & Verification ──── 🔍 Debug                         │
+│  🧪  Test & Verification ──── 🔍 Debug                          │
 │       │                                                         │
 │       ▼                                                         │
-│  📚  Documentation ──── 🌐 Version Control ──── 🚀 Release     │
+│  📚  Documentation ──── 🌐 Version Control ──── 🚀 Release      │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```

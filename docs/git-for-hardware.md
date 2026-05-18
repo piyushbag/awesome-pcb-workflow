@@ -287,7 +287,7 @@ KiCad's `.kicad_sch` files are plain text. You can diff them directly:
 git diff HEAD~1 hardware/project-name.kicad_sch
 ```
 
-For visual diffs, use the [KiDiff](https://github.com/leoheck/kidiff) tool:
+For visual diffs, use the [KiCad-Diff](https://github.com/Gasman2014/KiCad-Diff) tool:
 
 ```bash
 pip install kidiff
@@ -329,6 +329,6 @@ gh release create v2.1 fab/v2.1/gerbers/*.gbr --title "Board Rev 2.1" --notes "S
 
 - [KiBot CI/CD Documentation](https://github.com/INTI-CMNB/KiBot)
 - [Git LFS for large hardware binaries](https://git-lfs.github.com/)
-- [KiDiff — visual schematic diffs](https://github.com/leoheck/kidiff)
+- [KiCad-Diff — visual schematic diffs](https://github.com/Gasman2014/KiCad-Diff)
 - [Kitspace — public PCB project hosting](https://kitspace.org)
 - [Open Hardware Association guidelines](https://certification.oshwa.org)

@@ -165,6 +165,7 @@ Most vendors publish PSpice-compatible `.lib` files. These work directly in ngsp
 ```
 
 Common sources for ngspice-compatible models:
+
 - [SpiceModel.com](https://www.spicemodel.com) — aggregator
 - Texas Instruments: `ti.com/design-resources/software/spice-models.html`
 - Analog Devices: `analog.com/en/design-center/simulation-models.html`

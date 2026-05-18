@@ -31,7 +31,7 @@ This directory documents how to connect OrCAD's suite of tools to the open-sourc
 
 ## OrCAD Suite → Open-Source Equivalent Map
 
-```
+```text
 OrCAD Capture (Schematic)
     │
     ├── Full replacement  →  KiCad Eeschema / SKiDL / atopile

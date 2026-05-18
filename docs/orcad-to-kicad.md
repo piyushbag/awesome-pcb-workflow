@@ -40,7 +40,7 @@ This keeps OrCAD Capture as your schematic tool but uses KiCad for everything do
 
 OrCAD stores footprint names in its own format. You will need to remap them to KiCad footprint library names. This is a one-time mapping that can be saved as a `.cvpcb` file for reuse.
 
-```
+```text
 OrCAD footprint name     →  KiCad footprint library:name
 SOIC-8                   →  Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
 0402                     →  Capacitor_SMD:C_0402_1005Metric
@@ -65,7 +65,7 @@ orcad2kicad --input design.dsn --output design.kicad_sch
 
 Alternatively, use the [EDA Converter](https://www.eda-technologies.com) web tool for complex hierarchical designs.
 
-### What survives migration:
+### What survives migration
 
 | Element | Survival |
 |---|---|
@@ -115,14 +115,14 @@ This approach makes schematics code-reviewable, parametric, and CI/CD-friendly.
 2. Select **CSV** output format
 3. Include columns: Reference, Value, Footprint, Quantity, Manufacturer, MPN
 
-### Feed into KiCost (real-time pricing):
+### Feed into KiCost (real-time pricing)
 
 ```bash
 pip install kicost
 kicost --input bom.csv --output priced_bom.xlsx --fields "Value,Footprint,Manufacturer,MPN"
 ```
 
-### Feed into InteractiveHtmlBom:
+### Feed into InteractiveHtmlBom
 
 ```bash
 # Requires a KiCad .kicad_pcb file alongside the BOM

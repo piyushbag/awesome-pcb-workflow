@@ -46,7 +46,14 @@
     { "pattern": "^https://analog.com" },
     { "pattern": "^https://www.spicemodel.com" },
     { "pattern": "^https://octopart.com" },
-    { "pattern": "^https://schemdraw.readthedocs.io" }
+    { "pattern": "^https://schemdraw.readthedocs.io" },
+
+    { "pattern": "^https://www.kicad.org/discover" },
+    { "pattern": "^https://github.com/easyw/kicad-StepUp" },
+    { "pattern": "^https://openocd.org" },
+    { "pattern": "^https://github.com/nwidger/pyBSL" },
+    { "pattern": "^https://reddit.com" },
+    { "pattern": "^https://github.com/leoheck/kidiff" }
   ],
   "aliveStatusCodes": [200, 206],
   "timeout": "20s",

@@ -42,6 +42,7 @@ Find the correct workflow stage section in `README.md` and add a table row. Foll
 ```
 
 **Rules for the entry:**
+
 - Name: include a relevant emoji, then the tool name, linked to the canonical URL
 - Description: one sentence, active voice, says what the tool *does* and *why an engineer would use it*
 - OrCAD Integration: how the tool connects to OrCAD (netlist format, API, export method) — or `—` if not applicable
@@ -56,6 +57,7 @@ git push origin add/tool-name
 ```
 
 Then open a pull request with:
+
 - **Title:** `Add [Tool Name] to [Stage]`
 - **Description:** What the tool does, why it belongs here, and any OrCAD integration details
 
@@ -63,7 +65,7 @@ Then open a pull request with:
 
 ## Inclusion Criteria
 
-### ✅ A tool is included if:
+### ✅ A tool is included
 
 - It is **open-source** (Apache, MIT, GPL, BSD, or equivalent) *or* free-to-use with clearly documented terms
 - It is **actively maintained** — at least one commit in the last 18 months — *or* is historically significant (e.g., ngspice, gerbv)
@@ -71,7 +73,7 @@ Then open a pull request with:
 - It **solves a real workflow problem** in schematic, simulation, layout, fab prep, test, or documentation
 - It has **working documentation** — a README or docs site that a new user can actually follow
 
-### ❌ A tool is excluded if:
+### ❌ A tool is excluded
 
 - It is purely commercial with no meaningful free tier
 - It is unmaintained with known breaking bugs and no active fork

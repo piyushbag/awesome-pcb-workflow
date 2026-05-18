@@ -18,7 +18,7 @@ Software engineers take git for granted. Hardware engineers often don't use it a
 
 ## What to Commit
 
-### ✅ Always commit:
+### ✅ Always commit
 
 | File type | Why |
 |---|---|
@@ -32,7 +32,7 @@ Software engineers take git for granted. Hardware engineers often don't use it a
 | Fab notes, design notes `.md` | Engineering decisions and constraints |
 | `requirements.txt` | Python toolchain versions |
 
-### ⚠️ Commit with care:
+### ⚠️ Commit with care
 
 | File type | Guidance |
 |---|---|
@@ -41,7 +41,7 @@ Software engineers take git for granted. Hardware engineers often don't use it a
 | Component library `.kicad_sym` | Commit if custom; use submodule for shared org library |
 | Simulation results | Only commit final validated results, not every run |
 
-### ❌ Never commit:
+### ❌ Never commit
 
 ```gitignore
 # OrCAD build artifacts
@@ -92,7 +92,7 @@ Save this as `.gitignore` in the repo root.
 
 A clean PCB project repository:
 
-```
+```text
 project-name/
 ├── README.md                   # Project overview, specs, fab notes
 ├── .gitignore
@@ -137,7 +137,7 @@ Good commit messages make the history useful when you're debugging a hardware is
 
 **Format:**
 
-```
+```text
 [stage] Short description (what changed)
 
 Why: Reason for the change (design decision, ECO, bug fix)
@@ -146,7 +146,7 @@ Impact: What this affects (net, component, layer, etc.)
 
 **Examples:**
 
-```
+```text
 [schematic] Replace U3 LDO from LM7805 to TPS7A4700
 
 Why: LM7805 has insufficient PSRR for ADC supply — measured 45dB at
@@ -155,7 +155,7 @@ Impact: VCC_ADC net, C12/C13 bypass capacitors resized to match TPS7A
         recommended values.
 ```
 
-```
+```text
 [layout] Move U3 closer to C12/C13 — reduce bypass cap trace length
 
 Why: Previous placement had 8mm trace to bypass caps, causing
@@ -163,7 +163,7 @@ Why: Previous placement had 8mm trace to bypass caps, causing
 Impact: U3, C12, C13 placement, VCC_ADC polygon pour updated.
 ```
 
-```
+```text
 [fab] Tag v2.1 release — ordered from JLCPCB 2026-05-17
 
 Why: ECO-007 incorporated (R47 value corrected to 4.7k)
@@ -174,7 +174,7 @@ Impact: Gerbers in fab/v2.1/
 
 ## Branch Strategy for Hardware Teams
 
-```
+```text
 main          ← Always reflects the last fabricated, validated board revision
 │
 ├── dev       ← Active development, may not be fab-ready
@@ -186,6 +186,7 @@ main          ← Always reflects the last fabricated, validated board revision
 ```
 
 **Rules:**
+
 - `main` is only updated when a board revision has been fabricated and validated
 - Every fab order gets a `git tag` — `git tag v2.1 && git push origin v2.1`
 - Engineers work on `dev` or feature branches, never directly on `main`
@@ -286,7 +287,7 @@ KiCad's `.kicad_sch` files are plain text. You can diff them directly:
 git diff HEAD~1 hardware/project-name.kicad_sch
 ```
 
-For visual diffs, use the [KiDiff](https://github.com/leoheck/ki-nTree) tool:
+For visual diffs, use the [KiCad-Diff](https://github.com/Gasman2014/KiCad-Diff) tool:
 
 ```bash
 pip install kidiff
@@ -328,6 +329,6 @@ gh release create v2.1 fab/v2.1/gerbers/*.gbr --title "Board Rev 2.1" --notes "S
 
 - [KiBot CI/CD Documentation](https://github.com/INTI-CMNB/KiBot)
 - [Git LFS for large hardware binaries](https://git-lfs.github.com/)
-- [KiDiff — visual schematic diffs](https://github.com/leoheck/ki-nTree)
+- [KiCad-Diff — visual schematic diffs](https://github.com/Gasman2014/KiCad-Diff)
 - [Kitspace — public PCB project hosting](https://kitspace.org)
 - [Open Hardware Association guidelines](https://certification.oshwa.org)

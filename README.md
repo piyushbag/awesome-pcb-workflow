@@ -94,7 +94,7 @@ pip install -r requirements.txt    # kibot, kibom, kicost, skidl, pymeasure
 
 ## 🗺 Workflow Map
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    PCB DESIGN WORKFLOW                          │
 ├─────────────────────────────────────────────────────────────────┤
@@ -363,7 +363,7 @@ _Document designs so every engineer on the team can understand them._
 
 Quick reference for plugging OrCAD into the open-source ecosystem:
 
-```
+```text
 OrCAD Capture  ──(netlist .net export)──▶  KiCad pcbnew / SKiDL / KiBOM
 OrCAD PSpice   ──(.cir netlist)─────────▶  ngspice / PySpice / Xyce
 OrCAD Allegro  ──(IPC-2581 export)──────▶  KiKit panelization / KiBot CI / FreeCAD

@@ -12,7 +12,6 @@
     { "pattern": "^http://ngspice.sourceforge.net" },
     { "pattern": "^http://www.geda-project.org" },
     { "pattern": "^http://www.eremex.com" },
-    { "pattern": "^http://urjtag.org" },
     { "pattern": "^https://sourceforge.net" },
 
     { "pattern": "^https://saturnpcb.com" },
@@ -39,7 +38,15 @@
     { "pattern": "^https://www.altium.com" },
     { "pattern": "^https://www.analog.com" },
     { "pattern": "^https://openems.de" },
-    { "pattern": "^https://www.elsevier.com" }
+    { "pattern": "^https://www.elsevier.com" },
+
+    { "pattern": "^https://pyspice.fabrice-salvaire.fr" },
+    { "pattern": "^https://www.eda-technologies.com" },
+    { "pattern": "^https://ti.com" },
+    { "pattern": "^https://analog.com" },
+    { "pattern": "^https://www.spicemodel.com" },
+    { "pattern": "^https://octopart.com" },
+    { "pattern": "^https://schemdraw.readthedocs.io" }
   ],
   "aliveStatusCodes": [200, 206],
   "timeout": "20s",

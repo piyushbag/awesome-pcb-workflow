@@ -1,0 +1,8 @@
+{
+  "featured": [
+    {
+      "month": "2026-06",
+      "tools": ["faebryk", "KiKit", "scikit-rf", "KiCost", "sigrok"]
+    }
+  ]
+}

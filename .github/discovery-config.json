@@ -1,0 +1,92 @@
+{
+  "min_stars": 25,
+  "max_new_tools_per_month": 5,
+  "cooldown_months": 6,
+  "featured_stage_groups": {
+    "design": {
+      "label": "Schematic",
+      "anchor": "#-schematic-capture",
+      "section_keywords": ["Schematic Capture", "PCB Layout", "AI & Automation"]
+    },
+    "simulation": {
+      "label": "Simulation",
+      "anchor": "#-signal-integrity--emc-analysis",
+      "section_keywords": ["SPICE", "Signal Integrity"]
+    },
+    "bom": {
+      "label": "BOM",
+      "anchor": "#-component-libraries--bom-management",
+      "section_keywords": ["Component Libraries", "BOM Management"]
+    },
+    "fabrication": {
+      "label": "Fabrication",
+      "anchor": "#-fabrication--gerber-tooling",
+      "section_keywords": ["Fabrication", "DFM"]
+    },
+    "testing": {
+      "label": "Testing",
+      "anchor": "#-testing--verification",
+      "section_keywords": ["Testing", "Documentation"]
+    }
+  },
+  "searches": [
+    {
+      "section_heading": "### 📐 Schematic Capture",
+      "table_columns": 4,
+      "orcad_default": "—",
+      "query": "pcb schematic eda stars:>50 pushed:>2024-06-01",
+      "topics": ["kicad", "eda", "pcb-design"],
+      "description_keywords": ["pcb", "schematic", "eda", "kicad", "circuit", "footprint", "hardware design"],
+      "require_any_keywords": ["pcb", "schematic", "eda", "kicad", "footprint"]
+    },
+    {
+      "section_heading": "### ⚡ SPICE & Circuit Simulation",
+      "table_columns": 4,
+      "best_for_default": "Circuit simulation.",
+      "query": "spice simulation circuit stars:>50 pushed:>2024-06-01",
+      "topics": ["spice", "simulation"],
+      "description_keywords": ["spice", "simulation", "circuit", "analog", "electronic"],
+      "require_any_keywords": ["spice", "simulation"],
+      "exclude_description_keywords": ["terminal", "ssh", "vnc", "rdp", "remote desktop", "spice client", "universe", "planetary", "vr ", "virtual reality", "astrophysics"],
+      "require_all_keyword_groups": [
+        ["spice", "simulation", "ngspice", "xyce", "pyspice"],
+        ["circuit", "analog", "electronic", "verilog", "netlist"]
+      ]
+    },
+    {
+      "section_heading": "### 📡 Signal Integrity & EMC Analysis",
+      "table_columns": 3,
+      "query": "signal integrity rf microwave pcb stars:>30 pushed:>2024-06-01",
+      "topics": ["rf", "microwave"],
+      "description_keywords": ["rf", "microwave", "signal", "emc", "impedance", "transmission", "s-parameter"]
+    },
+    {
+      "section_heading": "### 🏭 Fabrication & Gerber Tooling",
+      "table_columns": 3,
+      "query": "gerber pcb fabrication stars:>30 pushed:>2024-06-01",
+      "topics": ["gerber", "pcb-fabrication"],
+      "description_keywords": ["gerber", "fabrication", "pcb", "manufacturing", "drill", "cam"]
+    },
+    {
+      "section_heading": "### 🔩 DFM & Panelization",
+      "table_columns": 3,
+      "query": "pcb panelization dfm stars:>20 pushed:>2024-06-01",
+      "topics": ["dfm", "panelization"],
+      "description_keywords": ["dfm", "panel", "manufactur", "pcb", "fabrication"]
+    },
+    {
+      "section_heading": "### 🧪 Testing & Verification",
+      "table_columns": 3,
+      "query": "hardware test automation instrument stars:>50 pushed:>2024-06-01",
+      "topics": ["test-automation", "hardware-testing"],
+      "description_keywords": ["test", "instrument", "hardware", "measurement", "verification", "lab"]
+    },
+    {
+      "section_heading": "### 🤖 AI & Automation",
+      "table_columns": 3,
+      "query": "pcb automation hardware design stars:>30 pushed:>2024-06-01",
+      "topics": ["hardware", "automation"],
+      "description_keywords": ["pcb", "hardware", "eda", "design", "automation", "schematic", "layout"]
+    }
+  ]
+}

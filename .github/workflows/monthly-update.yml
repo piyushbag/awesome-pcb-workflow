@@ -1,0 +1,69 @@
+name: Monthly Tool Discovery & Featured Update
+
+on:
+  schedule:
+    # 09:00 UTC on the 1st of every month
+    - cron: "0 9 1 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview changes without committing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  monthly-update:
+    name: Discover tools and update README
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run monthly updater
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python scripts/monthly_update.py --dry-run
+          else
+            python scripts/monthly_update.py
+          fi
+
+      - name: Commit and push changes
+        if: ${{ !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true)) }}
+        run: |
+          if git diff --quiet README.md .github/featured-history.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          MONTH=$(date -u +"%B %Y")
+          git add README.md .github/featured-history.json
+          git commit -m "$(cat <<EOF
+          Monthly update: ${MONTH} tool discovery and featured rotation.
+
+          Automated discovery via GitHub API plus Featured This Month refresh.
+          EOF
+          )"
+          git push
+
+      - name: Validate Markdown
+        if: success() && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"
+          config: ".github/.markdownlint.json"

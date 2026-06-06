@@ -7,8 +7,8 @@
 <em>Open-source tools for the complete PCB design workflow.</em><br>
 <strong>AI-assisted EDA · Schematic Capture · SPICE Simulation · Signal Integrity · Layout Automation · DFM · Fabrication CI/CD · Hardware Testing Agents</strong>
 
-[![GitHub Stars](https://img.shields.io/github/stars/piyushbag/awesome-pcb-workflow?style=flat-square&color=gold&logo=github)](https://github.com/piyushbag/awesome-pcb-workflow/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/piyushbag/awesome-pcb-workflow?style=flat-square&logo=github)](https://github.com/piyushbag/awesome-pcb-workflow/forks)
+[![GitHub Stars](https://badgen.net/github/stars/piyushbag/awesome-pcb-workflow?label=stars&icon=github&color=gold)](https://github.com/piyushbag/awesome-pcb-workflow/stargazers)
+[![GitHub Forks](https://badgen.net/github/forks/piyushbag/awesome-pcb-workflow?label=forks&icon=github)](https://github.com/piyushbag/awesome-pcb-workflow/forks)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0--1.0-lightgrey.svg?style=flat-square)](LICENSE)
 [![Works with OrCAD](https://img.shields.io/badge/Works%20with-OrCAD-red?style=flat-square)](https://www.orcad.com)

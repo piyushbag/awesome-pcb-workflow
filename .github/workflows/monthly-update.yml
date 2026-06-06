@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -30,7 +31,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Set month label
+        id: month
+        run: echo "label=$(date -u +'%B %Y')" >> "$GITHUB_OUTPUT"
+
       - name: Run monthly updater
+        id: updater
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -40,45 +46,48 @@ jobs:
             python scripts/monthly_update.py
           fi
 
-      - name: Commit and push changes
-        id: commit
-        if: ${{ !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true)) }}
-        run: |
-          if git diff --quiet README.md .github/featured-history.json; then
-            echo "committed=false" >> "$GITHUB_OUTPUT"
-            echo "No changes to commit."
-            exit 0
-          fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          MONTH=$(date -u +"%B %Y")
-          git add README.md .github/featured-history.json
-          git commit -m "$(cat <<EOF
-          Monthly update: ${MONTH} tool discovery and featured rotation.
-
-          Automated discovery via GitHub API plus Featured This Month refresh.
-          EOF
-          )"
-          git push
-          echo "committed=true" >> "$GITHUB_OUTPUT"
-          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
       - name: Validate Markdown
-        if: success() && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        if: steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
         uses: DavidAnson/markdownlint-cli2-action@v19
         with:
           globs: "**/*.md"
           config: ".github/.markdownlint.json"
 
+      - name: Create monthly update pull request
+        id: pr
+        if: steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            Monthly update: tool discovery and featured rotation.
+
+            Automated discovery via GitHub API plus Featured This Month refresh.
+          title: "Monthly update: ${{ steps.month.outputs.label }}"
+          body: |
+            Automated monthly README refresh from the scheduled discovery workflow.
+
+            - Rotates **Featured This Month**
+            - Adds newly discovered open-source PCB workflow tools
+            - Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          branch: automated/monthly-update
+          delete-branch: true
+          labels: automated
+
+      - name: Attach PR link to run summary
+        if: always() && steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        env:
+          PR_URL: ${{ steps.pr.outputs.pull-request-url }}
+          PUSH_STATUS: ${{ steps.pr.outcome }}
+        run: python scripts/attach_pr_to_summary.py
+
       - name: Notify Cursor automation
-        if: success() && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        if: always() && steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
         env:
           CURSOR_AUTOMATION_WEBHOOK_URL: ${{ secrets.CURSOR_AUTOMATION_WEBHOOK_URL }}
           CURSOR_AUTOMATION_WEBHOOK_KEY: ${{ secrets.CURSOR_AUTOMATION_WEBHOOK_KEY }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_SERVER_URL: ${{ github.serverUrl }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-          GITHUB_SHA: ${{ steps.commit.outputs.sha || github.sha }}
+          GITHUB_SHA: ${{ github.sha }}
         run: python scripts/notify_cursor.py

@@ -82,11 +82,11 @@ pip install -r requirements.txt    # kibot, kibom, kicost, skidl, pymeasure
 
 | Tool               | What it does                                                                         | Stage                                          |
 | ------------------ | ------------------------------------------------------------------------------------ | ---------------------------------------------- |
-| 🧠 faebryk          | Graph-based schematic design in Python with AI-assisted part selection               | [Schematic](#-schematic-capture)               |
-| 🏭 KiKit            | CLI panelization with mouse-bites, V-cuts, and fiducials from JSON config            | [DFM](#-dfm--panelization)                     |
-| 📡 scikit-rf        | Python RF/microwave analysis — S-params, de-embedding, and calibration             | [Simulation](#-signal-integrity--emc-analysis) |
-| 💰 KiCost           | Real-time BOM pricing from Mouser, Digi-Key, Arrow, and LCSC                         | [BOM](#-component-libraries--bom-management)   |
-| 📡 sigrok           | Open-source logic analyzer with 100+ protocol decoders and scope integration         | [Testing](#-testing--verification)             |
+| ⚡ SKiDL | Describe schematics in pure Python — generate netlists programmatically, version-controllable. | [Schematic](#-schematic-capture) |
+| 📐 Qucs-S | Qt GUI for ngspice/Xyce with RF S-parameter and harmonic balance support. | [Simulation](#-signal-integrity--emc-analysis) |
+| 📊 KiBOM | Configurable BOM export from KiCad schematics to CSV, HTML, Excel. | [BOM](#-component-libraries--bom-management) |
+| 📋 KiBot | CI/CD automation: Gerbers, drill, BOM, PDF docs, 3D models — one YAML config. | [Fabrication](#-fabrication--gerber-tooling) |
+| 🌐 Kitspace | Git for hardware — public PCB project hosting with 3D preview and BOM pricing. | [Testing](#-testing--verification) |
 
 > 📬 **Watch this repo** to get notified when new tools are added each month.
 
@@ -159,6 +159,9 @@ _Draw, annotate, and export schematics. Every tool documents its OrCAD interoper
 | [🟫 gEDA/gschem](http://www.geda-project.org)            | Veteran open-source EDA with deep Scheme scripting and netlist flexibility.                    | Netlist export compatible.                 | GPL-2.0 |
 | [🌐 Horizon EDA](https://github.com/horizon-eda/horizon) | Constraint-based EDA with real-time DRC, pooled parts library.                                 | —                                          | GPL-3.0 |
 | [🐍 faebryk](https://github.com/faebryk/faebryk)         | Graph-based schematic design in Python — AI-assisted part selection and constraint solving.    | Netlist export.                            | MIT     |
+| [🖥 PcbDraw](https://github.com/yaqwsx/PcbDraw) | Convert your KiCAD board into a nicely looking 2D drawing suitable for pinout diagrams. | — | MIT |
+| [🟦 kicanvas](https://github.com/theacodes/kicanvas) | The KiCAD web viewer. | — | NOASSERTION |
+| [⚡ CircuitPro](https://github.com/CircuitProApp/CircuitPro) | Circuit Pro — a Mac-native PCB design tool. Free for personal and commercial use. | — | NOASSERTION |
 
 > **OrCAD Users:** See our full guide → [docs/orcad-to-kicad.md](docs/orcad-to-kicad.md)
 
@@ -204,6 +207,8 @@ _Simulate before you spin a board. Catch topology mistakes for free._
 | [⚡ Xyce](https://xyce.sandia.gov)                       | High-performance parallel SPICE by Sandia National Labs.                  | Large mixed-signal circuits.    | GPL-3.0 |
 | [🌐 Qucs](http://qucs.sourceforge.net)                   | Circuit simulator with S-parameters, Verilog-A, and harmonic balance.     | RF/microwave, S-param.          | GPL-2.0 |
 | [📊 SchemDraw](https://schemdraw.readthedocs.io)         | Draw and annotate schematics in Python, pair with PySpice.                | Quick topology docs.            | MIT     |
+| [⚡ ahkab](https://github.com/ahkab/ahkab) | a SPICE-like electronic circuit simulator written in Python. | Circuit simulation. | GPL-2.0 |
+| [⚡ SpiceSharp](https://github.com/SpiceSharp/SpiceSharp) | Spice# is a cross-platform electronic circuit simulator based on Berkeley Spice - the mother of commercial... | Circuit simulation. | MIT |
 
 > **OrCAD PSpice Users:** `.cir` netlists from PSpice are directly compatible with ngspice. See our migration guide → [docs/pspice-to-ngspice.md](docs/pspice-to-ngspice.md)
 

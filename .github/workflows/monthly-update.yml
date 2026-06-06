@@ -41,9 +41,11 @@ jobs:
           fi
 
       - name: Commit and push changes
+        id: commit
         if: ${{ !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true)) }}
         run: |
           if git diff --quiet README.md .github/featured-history.json; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
             echo "No changes to commit."
             exit 0
           fi
@@ -60,6 +62,8 @@ jobs:
           EOF
           )"
           git push
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Validate Markdown
         if: success() && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
@@ -67,3 +71,14 @@ jobs:
         with:
           globs: "**/*.md"
           config: ".github/.markdownlint.json"
+
+      - name: Notify Cursor automation
+        if: success() && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        env:
+          CURSOR_AUTOMATION_WEBHOOK_URL: ${{ secrets.CURSOR_AUTOMATION_WEBHOOK_URL }}
+          CURSOR_AUTOMATION_WEBHOOK_KEY: ${{ secrets.CURSOR_AUTOMATION_WEBHOOK_KEY }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SERVER_URL: ${{ github.serverUrl }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ steps.commit.outputs.sha || github.sha }}
+        run: python scripts/notify_cursor.py

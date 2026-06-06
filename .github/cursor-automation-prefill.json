@@ -1,0 +1,22 @@
+{
+  "name": "PCB Workflow Monthly Update Notification",
+  "description": "Posts a Cursor chat summary when the awesome-pcb-workflow monthly GitHub Action completes.",
+  "workflow": {
+    "triggers": [
+      {
+        "webhook": {}
+      }
+    ],
+    "actions": [],
+    "prompts": [
+      {
+        "prompt": "You are a notification agent for the awesome-pcb-workflow repository.\n\nA GitHub Action just finished the monthly tool discovery run. The webhook body is JSON with fields like:\n- month_label\n- changed / no_changes\n- featured_tools\n- added_tools\n- commit_url\n- workflow_run_url\n- readme_url\n\nWrite a short, friendly Cursor chat message for the repo owner. Structure it like:\n\n1. Title line: \"Monthly PCB Workflow update — {month_label}\"\n2. One sentence on whether README was updated or the scan found nothing new\n3. Bullet list of Featured This Month tools (if present)\n4. Bullet list of newly added tools (if any)\n5. Links to the GitHub commit and Actions run when available\n\nDo not edit code or open pull requests. This is notification-only."
+      }
+    ],
+    "model": "",
+    "agentOptions": {
+      "skipInstall": false
+    },
+    "memoryEnabled": false
+  }
+}

@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 CONFIG = ROOT / ".github" / "discovery-config.json"
 HISTORY = ROOT / ".github" / "featured-history.json"
+RUN_SUMMARY = ROOT / ".github" / "last-monthly-run.json"
 
 TABLE_ROW = re.compile(
     r"^\|\s*\[(?P<label>[^\]]+)\]\((?P<url>[^)]+)\)\s*\|\s*(?P<desc>[^|]+)\|"
@@ -485,6 +486,32 @@ def discover_new_tools(content: str, config: dict, token: str) -> tuple[str, lis
     return content, added
 
 
+def write_run_summary(
+    *,
+    month_key: str,
+    featured: list[tuple[ToolEntry, dict]],
+    added: list[str],
+    changed: bool,
+    dry_run: bool,
+) -> None:
+    now = datetime.now(timezone.utc)
+    summary = {
+        "event": "monthly_update_completed",
+        "month": month_key,
+        "month_label": now.strftime("%B %Y"),
+        "run_at": now.isoformat(),
+        "dry_run": dry_run,
+        "changed": changed,
+        "no_changes": not changed,
+        "featured_tools": [tool.name for tool, _ in featured],
+        "added_tools": added,
+        "repo": "piyushbag/awesome-pcb-workflow",
+        "readme_url": "https://github.com/piyushbag/awesome-pcb-workflow#-featured-this-month",
+    }
+    RUN_SUMMARY.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote run summary to {RUN_SUMMARY}")
+
+
 def run(dry_run: bool = False) -> int:
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
@@ -504,6 +531,8 @@ def run(dry_run: bool = False) -> int:
 
     now = datetime.now(timezone.utc)
     month_key = now.strftime("%Y-%m")
+    changed = content != original or bool(added)
+
     history.setdefault("featured", [])
     history["featured"] = [e for e in history["featured"] if e.get("month") != month_key]
     history["featured"].append(
@@ -514,13 +543,19 @@ def run(dry_run: bool = False) -> int:
         }
     )
 
-    if content == original and not added:
-        print("No changes needed.")
-        return 0
+    write_run_summary(
+        month_key=month_key,
+        featured=featured,
+        added=added,
+        changed=changed,
+        dry_run=dry_run,
+    )
 
     print("Featured tools:", ", ".join(tool.name for tool, _ in featured))
     if added:
         print("New tools added:", ", ".join(added))
+    if not changed:
+        print("No README changes needed.")
 
     if dry_run:
         print("\n--- README diff preview (first 80 lines) ---")
@@ -528,8 +563,9 @@ def run(dry_run: bool = False) -> int:
             print(line)
         return 0
 
-    README.write_text(content, encoding="utf-8")
-    save_json(HISTORY, history)
+    if changed:
+        README.write_text(content, encoding="utf-8")
+        save_json(HISTORY, history)
     return 0
 
 

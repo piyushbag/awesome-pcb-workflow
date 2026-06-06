@@ -1,0 +1,25 @@
+{
+  "event": "monthly_update_completed",
+  "month": "2026-06",
+  "month_label": "June 2026",
+  "run_at": "2026-06-06T04:39:04.259740+00:00",
+  "dry_run": false,
+  "changed": true,
+  "no_changes": false,
+  "featured_tools": [
+    "SKiDL",
+    "Qucs-S",
+    "KiBOM",
+    "KiBot",
+    "Kitspace"
+  ],
+  "added_tools": [
+    "yaqwsx/PcbDraw",
+    "theacodes/kicanvas",
+    "CircuitProApp/CircuitPro",
+    "ahkab/ahkab",
+    "SpiceSharp/SpiceSharp"
+  ],
+  "repo": "piyushbag/awesome-pcb-workflow",
+  "readme_url": "https://github.com/piyushbag/awesome-pcb-workflow#-featured-this-month"
+}

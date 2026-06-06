@@ -82,11 +82,11 @@ pip install -r requirements.txt    # kibot, kibom, kicost, skidl, pymeasure
 
 | Tool               | What it does                                                                         | Stage                                          |
 | ------------------ | ------------------------------------------------------------------------------------ | ---------------------------------------------- |
-| ⚡ atopile         | Write PCB designs in code — generates schematics from typed, reusable Python modules | [Schematic](#-schematic-capture)               |
-| 🤖 KiBot           | CI/CD automation — Gerbers, BOM, drill, PDF docs on every Git commit                 | [Fabrication](#-fabrication--gerber-tooling)   |
-| 📊 Interactive BOM | One-click HTML BOM with clickable component highlighting on the PCB image            | [BOM](#-component-libraries--bom-management)   |
-| 🔬 openEMS         | Full 3D EM field simulation — replaces expensive SI tools like HFSS                  | [Simulation](#-signal-integrity--emc-analysis) |
-| 🧪 PyMeasure       | Python instrument control: Keysight, Tektronix, R&S, Rohde & Schwarz                 | [Testing](#-testing--verification)             |
+| 🧠 faebryk          | Graph-based schematic design in Python with AI-assisted part selection               | [Schematic](#-schematic-capture)               |
+| 🏭 KiKit            | CLI panelization with mouse-bites, V-cuts, and fiducials from JSON config            | [DFM](#-dfm--panelization)                     |
+| 📡 scikit-rf        | Python RF/microwave analysis — S-params, de-embedding, and calibration             | [Simulation](#-signal-integrity--emc-analysis) |
+| 💰 KiCost           | Real-time BOM pricing from Mouser, Digi-Key, Arrow, and LCSC                         | [BOM](#-component-libraries--bom-management)   |
+| 📡 sigrok           | Open-source logic analyzer with 100+ protocol decoders and scope integration         | [Testing](#-testing--verification)             |
 
 > 📬 **Watch this repo** to get notified when new tools are added each month.
 

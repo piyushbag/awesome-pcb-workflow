@@ -59,6 +59,8 @@ jobs:
       - name: Commit and push changes
         id: commit
         if: steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        env:
+          PUSH_TOKEN: ${{ secrets.WORKFLOW_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           if git diff --quiet README.md .github/featured-history.json; then
             echo "committed=false" >> "$GITHUB_OUTPUT"
@@ -76,7 +78,8 @@ jobs:
           Automated discovery via GitHub API plus Featured This Month refresh.
           EOF
           )"
-          git push
+          git remote set-url origin "https://x-access-token:${PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin HEAD:main
           echo "committed=true" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 

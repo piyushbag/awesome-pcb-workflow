@@ -2,7 +2,20 @@
   "featured": [
     {
       "month": "2026-06",
-      "tools": ["faebryk", "KiKit", "scikit-rf", "KiCost", "sigrok"]
+      "tools": [
+        "SKiDL",
+        "Qucs-S",
+        "KiBOM",
+        "KiBot",
+        "Kitspace"
+      ],
+      "added_repos": [
+        "yaqwsx/PcbDraw",
+        "theacodes/kicanvas",
+        "CircuitProApp/CircuitPro",
+        "ahkab/ahkab",
+        "SpiceSharp/SpiceSharp"
+      ]
     }
   ]
 }

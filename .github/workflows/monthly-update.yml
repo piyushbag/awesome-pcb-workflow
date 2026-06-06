@@ -46,6 +46,10 @@ jobs:
             python scripts/monthly_update.py
           fi
 
+      - name: Persist run summary
+        if: steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        run: cp .github/last-monthly-run.json "$RUNNER_TEMP/last-monthly-run.json"
+
       - name: Validate Markdown
         if: steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
         uses: DavidAnson/markdownlint-cli2-action@v19
@@ -55,6 +59,7 @@ jobs:
 
       - name: Create monthly update pull request
         id: pr
+        continue-on-error: true
         if: steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
         uses: peter-evans/create-pull-request@v7
         with:
@@ -79,10 +84,13 @@ jobs:
         env:
           PR_URL: ${{ steps.pr.outputs.pull-request-url }}
           PUSH_STATUS: ${{ steps.pr.outcome }}
-        run: python scripts/attach_pr_to_summary.py
+        run: |
+          cp "$RUNNER_TEMP/last-monthly-run.json" .github/last-monthly-run.json
+          python scripts/attach_pr_to_summary.py
 
       - name: Notify Cursor automation
         if: always() && steps.updater.outcome == 'success' && !((github.event_name == 'workflow_dispatch') && (inputs.dry_run == true))
+        continue-on-error: true
         env:
           CURSOR_AUTOMATION_WEBHOOK_URL: ${{ secrets.CURSOR_AUTOMATION_WEBHOOK_URL }}
           CURSOR_AUTOMATION_WEBHOOK_KEY: ${{ secrets.CURSOR_AUTOMATION_WEBHOOK_KEY }}

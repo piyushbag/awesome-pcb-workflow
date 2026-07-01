@@ -16,6 +16,23 @@
         "ahkab/ahkab",
         "SpiceSharp/SpiceSharp"
       ]
+    },
+    {
+      "month": "2026-07",
+      "tools": [
+        "faebryk",
+        "SpiceSharp",
+        "InvenTree",
+        "KiKit",
+        "KiBot PDF Export"
+      ],
+      "added_repos": [
+        "eelab-dev/EEcircuit",
+        "ruvnet/RuView",
+        "merbanan/rtl_433",
+        "ainfosec/FISSURE",
+        "AresValley/Artemis"
+      ]
     }
   ]
 }

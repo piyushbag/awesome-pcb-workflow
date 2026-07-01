@@ -82,11 +82,11 @@ pip install -r requirements.txt    # kibot, kibom, kicost, skidl, pymeasure
 
 | Tool               | What it does                                                                         | Stage                                          |
 | ------------------ | ------------------------------------------------------------------------------------ | ---------------------------------------------- |
-| ⚡ SKiDL | Describe schematics in pure Python — generate netlists programmatically, version-controllable. | [Schematic](#-schematic-capture) |
-| 📐 Qucs-S | Qt GUI for ngspice/Xyce with RF S-parameter and harmonic balance support. | [Simulation](#-signal-integrity--emc-analysis) |
-| 📊 KiBOM | Configurable BOM export from KiCad schematics to CSV, HTML, Excel. | [BOM](#-component-libraries--bom-management) |
-| 📋 KiBot | CI/CD automation: Gerbers, drill, BOM, PDF docs, 3D models — one YAML config. | [Fabrication](#-fabrication--gerber-tooling) |
-| 🌐 Kitspace | Git for hardware — public PCB project hosting with 3D preview and BOM pricing. | [Testing](#-testing--verification) |
+| 🐍 faebryk | Graph-based schematic design in Python — AI-assisted part selection and constraint solving. | [Schematic](#-schematic-capture) |
+| ⚡ SpiceSharp | Spice# is a cross-platform electronic circuit simulator based on Berkeley Spice - the mother of commercial... | [Simulation](#-signal-integrity--emc-analysis) |
+| 🏭 InvenTree | Full inventory + BOM management system (self-hosted, API-driven). | [BOM](#-component-libraries--bom-management) |
+| 🏭 KiKit | CLI panelization: mouse-bites, V-cuts, fiducials, automated tab placement from JSON config. | [Fabrication](#-fabrication--gerber-tooling) |
+| 📖 KiBot PDF Export | Auto-generate schematic PDFs and assembly drawings in CI. | [Testing](#-testing--verification) |
 
 > 📬 **Watch this repo** to get notified when new tools are added each month.
 
@@ -209,6 +209,7 @@ _Simulate before you spin a board. Catch topology mistakes for free._
 | [📊 SchemDraw](https://schemdraw.readthedocs.io)         | Draw and annotate schematics in Python, pair with PySpice.                | Quick topology docs.            | MIT     |
 | [⚡ ahkab](https://github.com/ahkab/ahkab) | a SPICE-like electronic circuit simulator written in Python. | Circuit simulation. | GPL-2.0 |
 | [⚡ SpiceSharp](https://github.com/SpiceSharp/SpiceSharp) | Spice# is a cross-platform electronic circuit simulator based on Berkeley Spice - the mother of commercial... | Circuit simulation. | MIT |
+| [⚡ EEcircuit](https://github.com/eelab-dev/EEcircuit) | A browser-based SPICE circuit simulator. | Circuit simulation. | MIT |
 
 > **OrCAD PSpice Users:** `.cir` netlists from PSpice are directly compatible with ngspice. See our migration guide → [docs/pspice-to-ngspice.md](docs/pspice-to-ngspice.md)
 
@@ -228,6 +229,10 @@ _Catch SI/EMC problems before fab — boards are expensive, simulation is free._
 | [📊 KiCad Impedance Calculator](https://docs.kicad.org/master/en/pcb_calculator/pcb_calculator.html) | Built-in PCB trace and via impedance calculator inside KiCad.                         | GPL-3.0  |
 | [🔬 Sonnet Lite](https://www.sonnetsoftware.com/products/lite/)                                      | Free tier of Sonnet EM planar 3D EM simulator.                                        | Freeware |
 | [⚡ AppCAD](https://www.broadcom.com/info/wireless/appcad)                                           | Free RF design and impedance tool from Broadcom/Avago.                                | Freeware |
+| [📡 RuView](https://github.com/ruvnet/RuView) | π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence... | MIT |
+| [🔧 rtl_433](https://github.com/merbanan/rtl_433) | Program to decode radio transmissions from devices on the ISM bands (and other frequencies). | GPL-2.0 |
+| [📡 FISSURE](https://github.com/ainfosec/FISSURE) | The RF and reverse engineering framework for everyone. Follow and ★ to show your support! | GPL-3.0 |
+| [📡 Artemis](https://github.com/AresValley/Artemis) | Radio Signals Recognition Manual. | GPL-3.0 |
 
 ---
 

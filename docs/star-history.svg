@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" role="img" aria-label="Star history for piyushbag/awesome-pcb-workflow">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="50%" y="28" text-anchor="middle" fill="#111827" font-family="sans-serif" font-size="20" font-weight="700">Star History</text>
+  <text x="50%" y="48" text-anchor="middle" fill="#6b7280" font-family="sans-serif" font-size="13">piyushbag/awesome-pcb-workflow · 2026-05-18 to 2026-06-29</text>
+  <rect x="64" y="56" width="700" height="300" fill="#fafafa" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="64" y1="322.7" x2="764" y2="322.7" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="54" y="322.7" text-anchor="end" dominant-baseline="middle" fill="#666" font-family="sans-serif" font-size="12">1</text>
+  <line x1="64" y1="222.7" x2="764" y2="222.7" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="54" y="222.7" text-anchor="end" dominant-baseline="middle" fill="#666" font-family="sans-serif" font-size="12">4</text>
+  <line x1="64" y1="56.0" x2="764" y2="56.0" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="54" y="56.0" text-anchor="end" dominant-baseline="middle" fill="#666" font-family="sans-serif" font-size="12">9</text>
+  <path d="M64,356 64.0,322.7 L68.2,289.3 68.6,256.0 83.1,222.7 118.3,189.3 255.8,156.0 317.2,122.7 437.3,89.3 764.0,56.0 L764.0,356 Z" fill="#fee2e2" opacity="0.65"/>
+  <polyline points="64.0,322.7 68.2,289.3 68.6,256.0 83.1,222.7 118.3,189.3 255.8,156.0 317.2,122.7 437.3,89.3 764.0,56.0" fill="none" stroke="#dd4528" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="764.0" cy="56.0" r="4.5" fill="#dd4528"/>
+  <text x="764.0" y="44.0" text-anchor="middle" fill="#111827" font-family="sans-serif" font-size="12" font-weight="600">9 stars</text>
+  <text x="414.0" y="402" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="13">Date (UTC)</text>
+  <text x="18" y="206.0" text-anchor="middle" fill="#374151" font-family="sans-serif" font-size="13" transform="rotate(-90 18 206.0)">GitHub Stars</text>
+</svg>

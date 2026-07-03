@@ -394,7 +394,9 @@ OrCAD 3D       ──(STEP export)──────────▶  FreeCAD / O
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=piyushbag/awesome-pcb-workflow&type=Date)](https://star-history.com/#piyushbag/awesome-pcb-workflow&Date)
+<a href="https://www.star-history.com/?repos=piyushbag%2Fawesome-pcb-workflow&type=date">
+  <img alt="Star History Chart" src="docs/star-history.svg" />
+</a>
 
 > Star the repo to get notified when new tools are added, and to help other engineers find this resource.
 

@@ -274,6 +274,7 @@ _Generate, verify, and send fab-ready files._
 | [📦 jlcpcb-tools](https://github.com/Bouni/kicad-jlcpcb-tools)          | KiCad plugin: one-click JLCPCB order with LCSC BOM generation.                | MIT     |
 | [🔍 OpenBoardView](https://github.com/openboardview/OpenBoardView)      | View `.brd` / `.bvr` board files for repair and reverse engineering.          | MIT     |
 | [📊 GerberTools](https://github.com/ThisIsNotRocketScience/GerberTools) | Gerber file manipulation, panelization, and merging utility.                  | MIT     |
+| [🌐 Salitronic Gerber Analyzer](https://salitronic.com/gerber_analyzer) | Browser-based Gerber / ODB++ / IPC-2581 viewer with DRC, layer diff, pick-and-place, plus thermal, EMI and impedance analysis. | Free |
 
 ---
 
